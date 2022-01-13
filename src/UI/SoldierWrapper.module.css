@@ -1,0 +1,18 @@
+.soldier__wrapper {
+    padding: 20px 45px 20px 10px;
+    background-color: white;
+    margin: 10px;
+    box-shadow: 0px 0px 14px 0px rgb(0 0 0 / 75%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* min-width: 250px; */
+    /* height: auto; */
+    border-radius: 8px;
+    width: 100%;
+}
+
+.soldier__wrapper h3 {
+    padding-bottom: 10px;
+}

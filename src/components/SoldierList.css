@@ -1,0 +1,8 @@
+.soldierList__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+}
