@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import SoldierWrapper from '../UI/SoldierWrapper';
 import Soldier from './Soldier';
 import './SoldierList.css';
+const soldiers = require('../soldiers_data');
+console.log(soldiers);
 
-const SoldierList = ({soldiers}) => {
+const SoldierList = () => {
 
     const [data, setData] = useState([]);
   const [sortType, setSortType] = useState('kills');
@@ -24,9 +25,6 @@ const SoldierList = ({soldiers}) => {
   }, [sortType]); 
 
 
-
-    
-
     return (
         <>
         <select onChange={(e) => setSortType(e.target.value)}>
@@ -38,7 +36,6 @@ const SoldierList = ({soldiers}) => {
 
       {data.map(soldier =>
     <Soldier key={soldier.id} soldier={soldier} /> )}
-         {/* {filtered} */}
         </div>
         </>
     )
