@@ -1,42 +1,35 @@
 import React, {useState, useEffect} from 'react';
 import Soldier from './Soldier';
+import FilterSelector from './FilterSelector';
 import './SoldierList.css';
-const soldiers = require('../soldiers_data');
-console.log(soldiers);
 
-const SoldierList = () => {
+const SoldierList = ({soldiers}) => {
 
-    const [data, setData] = useState([]);
-  const [sortType, setSortType] = useState('kills');
+  const [filtered, setFiltered] = useState([]);
 
-  useEffect(() => {
-    const sortArray = type => {
-      const types = {
-        kills: 'kills',
-        shots: 'shots',
-        missions: 'missions',
-      };
-      const sortProperty = types[type];
-      const sorted = [...soldiers].sort((a, b) => b[sortProperty] - a[sortProperty]);
-      setData(sorted);
-    };
+ const filtering = (data) => {
+  setFiltered(data);
+  console.log(data);
+ }
 
-    sortArray(sortType);
-  }, [sortType]); 
+//  useEffect(() => {
+    
+//  },[filtered])
 
+
+ console.log(filtered);
+
+
+
+ const displayedList = filtered.map(soldier =>
+    <Soldier key={soldier.id} soldier={soldier} /> )
 
     return (
         <>
-        <select onChange={(e) => setSortType(e.target.value)}>
-        <option value="kills">Kills</option>
-        <option value="shots">Shots</option>
-        <option value="missions">Missions</option>
-</select>
-        <div className="soldierList__wrapper">
-
-      {data.map(soldier =>
-    <Soldier key={soldier.id} soldier={soldier} /> )}
-        </div>
+        <FilterSelector filtered={filtering} soldiers={soldiers}/>
+            <div className="soldierList__wrapper">
+                {displayedList}
+            </div>
         </>
     )
 }
