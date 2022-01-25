@@ -13,6 +13,41 @@
     color: white;
 }
 
+.soldier__hidden_off {
+    display: none;
+    opacity: 0;
+}
+
+.soldier__hidden_on {
+    width: 100%;
+    display: block;
+    opacity: 1;
+    border-top: solid 1px black;
+}
+
+.soldier__hidden {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.arrow__reverse {
+    transform: rotateX(180deg);
+    transition: 0.3s;
+}
+
+.hidden__quadrant {
+    min-width: 150px;
+}
+
+.hidden__quadrant p {
+    padding-left: 5px;
+}
+
+.hidden__quadrant {
+    display: flex;
+}
+
 .soldier__info div {
     padding: 0 10px;
     display: flex;
@@ -25,6 +60,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-bottom: 10px;
+    flex-wrap: wrap;
 }
 
 .soldier__name {

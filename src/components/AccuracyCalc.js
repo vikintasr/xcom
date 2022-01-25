@@ -9,7 +9,7 @@ const AccuracyCalc = ({soldier}) => {
     return (
         <>
         {soldier.shots > 0 
-            ? <span><p>Accuracy </p>
+            ? <span><h3>Accuracy </h3>
              <p className={`${classes.accuracy__value} 
              ${accuracy < 50 && classes.bad}
              ${accuracy >= 50 && accuracy < 65 ? classes.decent : ""}

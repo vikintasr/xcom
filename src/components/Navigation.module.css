@@ -1,0 +1,35 @@
+.nav__top {
+    display: flex;
+    color: white;
+    align-items: center;
+    background-color: #262626;
+    justify-content: space-around;
+    position: sticky;
+    top: 0;
+}
+
+.nav__top li {
+    list-style: none;
+    padding: 5px;
+}
+
+.nav__sorter {
+    display: flex;
+    align-items: center;
+}
+
+.nav__sorter_list {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.nav__sorter_list li {
+    cursor: pointer;
+    padding: 20px 10px;
+}
+
+.sorter__active {
+    border-bottom: solid 3px #047104;
+    color: #047104;
+}

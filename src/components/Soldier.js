@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SoldierWrapper from '../UI/SoldierWrapper';
 import AccuracyCalc from './AccuracyCalc';
 import SoldierHidden from './SoldierHidden';
@@ -8,7 +8,12 @@ import { FaArrowAltCircleDown } from "react-icons/fa";
 
 const Soldier = ({soldier}) => {
 
-  
+  const [clicked, setClicked] = useState(false);
+
+  const openHidden = () => {
+    setClicked(!clicked);
+  }
+
     return (
       <>
         <SoldierWrapper soldier={soldier} className={(soldier.dead && "soldier__rip")}>
@@ -18,11 +23,11 @@ const Soldier = ({soldier}) => {
             <h3>'{soldier.nickname}'</h3>
             <p>{soldier.class}</p>
           </div>
-           
+        
         <div className={classes.soldier__info}>
           
             <div>
-            <p>Missions</p>
+            <h3>Missions</h3>
             <p>{soldier.missions}</p>
             </div>
 
@@ -31,28 +36,24 @@ const Soldier = ({soldier}) => {
             </div>
             
             <div>
-              <p>Kills</p>
+              <h3>Kills</h3>
               <p>{soldier.kills} ({soldier.lost_kills} L)</p>
             </div>
 
             <div>
-              <p>Shots</p>
+              <h3>Shots</h3>
               <p>{soldier.shots}</p>
             </div>
 
-            <div>
-              <p>TPM</p>
-              <p>{(soldier.tiles_moved / soldier.missions).toFixed(2)}</p>
-            </div>
-        
-    
         </div>
         
-        <h4 className={classes.arrow__toggler} onClick={() => {
-          console.log(this);
-        }}><FaArrowAltCircleDown /></h4>
+        <span className={`classes.arrow__toggler ${clicked ? classes.arrow__reverse : ""}`} value={clicked} onClick={() => {
+          openHidden();
+        }}><FaArrowAltCircleDown /></span>
           </div>
-          {/* <SoldierHidden soldier={soldier}/> */}
+          <div className={`${!clicked ? classes.soldier__hidden_off : classes.soldier__hidden_on}`}>
+          <SoldierHidden  soldier={soldier}/>
+          </div>
         </SoldierWrapper>
         
         </>

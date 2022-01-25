@@ -10,7 +10,7 @@
     /* min-width: 250px; */
     /* height: auto; */
     border-radius: 8px;
-    width: 100%;
+    flex-wrap: wrap;
 }
 
 .soldier__rip {
@@ -22,5 +22,5 @@
 }
 
 .soldier__wrapper h3 {
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }

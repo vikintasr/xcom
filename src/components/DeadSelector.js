@@ -11,7 +11,7 @@ const DeadSelector = ({soldiers, deadFiltered}) => {
             (isChecked ? sorted = soldiers.filter((user) => user.dead !== true) : sorted = soldiers);
             deadFiltered(sorted);
             
-      },[isChecked, soldiers])
+      },[isChecked])
 
       const handleOnChange = () => {
         setIsChecked(!isChecked);
