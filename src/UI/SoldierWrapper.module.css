@@ -10,7 +10,8 @@
     /* min-width: 250px; */
     /* height: auto; */
     border-radius: 8px;
-    flex-wrap: wrap;
+    background-color: #262626;
+    color: #bff6ffe0;
 }
 
 .soldier__rip {
